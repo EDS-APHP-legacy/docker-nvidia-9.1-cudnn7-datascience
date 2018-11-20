@@ -41,7 +41,7 @@ jupyter notebook password
 Then you can launch it with:
 
 ```
-sudo docker run -p 4242:8888 -v /etc/passwd:/etc/passwd -v /etc/group:/etc/group -v /etc/shadow:/etc/shadow -v /home/user:/home/user -it cuda9.1 /sbin/runuser -l user -s /bin/bash -c "/home/user/anaconda3/bin/jupyter lab --notebook-dir='/home/user' --config='/home/user/.jupyter/jupyter_notebook_config.py'"
+sudo docker run -p 4242:8888 --runtime=nvidia  -v /usr/local/cuda:/usr/local/cuda -v /usr/local/cuda-9.1/:/usr/local/cuda-9.1/ -v /usr/bin/nvidia-smi:/usr/bin/nvidia-smi -v /etc/passwd:/etc/passwd -v /etc/group:/etc/group -v /etc/shadow:/etc/shadow -v /home/user:/home/user -it cuda9.1 /sbin/runuser -l user -s /bin/bash -c "/home/user/anaconda3/bin/jupyter lab --notebook-dir='/home/user' --config='/home/user/.jupyter/jupyter_notebook_config.py'"
 ```
 
 Your Jupyter will be accessible from all the local network from `http://your_ip:4242`.
