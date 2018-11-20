@@ -3,10 +3,9 @@
 
 Tested with the following Host :
 * Ubuntu 18.04
-* Nvidia driver installé = 390.67
+* Installed Nvidia driver = 390.67
 
 No need for cuda on the Host. It will be installed inside the docker image.
-
 
 
 # Steps
@@ -16,7 +15,7 @@ No need for cuda on the Host. It will be installed inside the docker image.
 Follow those instructions : [https://github.com/NVIDIA/nvidia-docker#quickstart](https://github.com/NVIDIA/nvidia-docker#quickstart)
 
 
-2. Build l'image docker 
+2. Build the docker image
 
 ```
 sudo docker build --build-arg http_proxy=$http_proxy -t cuda9.1 .
